@@ -1,0 +1,1485 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Form Wizard - Ace Admin</title>
+
+		<meta name="description" content="and Validation" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{% static 'ace/assets/css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'ace/components/font-awesome/css/font-awesome.css' %}" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="{% static 'ace/components/select2/dist/css/select2.css' %}" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{% static 'ace/assets/css/ace-fonts.css' %}" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{% static 'ace/assets/css/ace.css' %}" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="{% static 'ace/assets/css/ace-part2.css' %}" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="{% static 'ace/assets/css/ace-skins.css' %}" />
+		<link rel="stylesheet" href="{% static 'ace/assets/css/ace-rtl.css' %}" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="{% static 'ace/assets/css/ace-ie.css' %}" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="{% static 'ace/assets/js/ace-extra.js' %}"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="{% static 'ace/components/html5shiv/dist/html5shiv.min.js' %}"></script>
+		<script src="{% static 'ace/components/respond/dest/respond.min.js' %}"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							学术论文评阅人推荐系统
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="grey dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-check"></i>
+									4 Tasks to complete
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">Software Update</span>
+													<span class="pull-right">65%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:65%" class="progress-bar"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">Hardware Upgrade</span>
+													<span class="pull-right">35%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">Unit Testing</span>
+													<span class="pull-right">15%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">Bug Fixes</span>
+													<span class="pull-right">90%</span>
+												</div>
+
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:90%" class="progress-bar progress-bar-success"></div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										See tasks with details
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									8 Notifications
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														New Comments
+													</span>
+													<span class="pull-right badge badge-info">+12</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												Bob just signed up as an editor ...
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														New Orders
+													</span>
+													<span class="pull-right badge badge-success">+8</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+														Followers
+													</span>
+													<span class="pull-right badge badge-info">+11</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										See all notifications
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="green dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-envelope-o"></i>
+									5 Messages
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{% static 'ace/assets/avatars/avatar.png' %}" class="msg-photo" alt="Alex's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Alex:</span>
+														Ciao sociis natoque penatibus et auctor ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>a moment ago</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{% static 'ace/assets/avatars/avatar3.png' %}" class="msg-photo" alt="Susan's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Susan:</span>
+														Vestibulum id ligula porta felis euismod ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>20 minutes ago</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{% static 'ace/assets/avatars/avatar4.png' %}" class="msg-photo" alt="Bob's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Bob:</span>
+														Nullam quis risus eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>3:15 pm</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{% static 'ace/assets/avatars/avatar2.png' %}" class="msg-photo" alt="Kate's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Kate:</span>
+														Ciao sociis natoque eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>1:33 pm</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="{% static 'ace/assets/avatars/avatar5.png' %}" class="msg-photo" alt="Fred's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Fred:</span>
+														Vestibulum id penatibus et auctor  ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>10:09 am</span>
+													</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="inbox.html">
+										See all messages
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="{% static 'ace/assets/avatars/user.jpg' %}" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+							<div style="display:none">{{userid}}</div>
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{% url 'recomm:assistantuserinfo' userid %}">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="{% url 'recomm:login' %}">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<!-- #section:basics/sidebar.layout.shortcuts -->
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+
+						<!-- /section:basics/sidebar.layout.shortcuts -->
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> 用户管理 </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="{% url 'recomm:assistantindex' userid %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									教师用户
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{% url 'recomm:managestudent' userid %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									学生用户
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> 论文推荐 </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="active">
+								<a href="{% url 'recomm:setrule' userid %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									推荐规则
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{% url 'recomm:matchpage' userid %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									进行推荐
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="{% url 'recomm:checkmatchresult' userid %}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									推荐结果
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="{% url 'recomm:assistantuserinfo' userid %}">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> 设置 </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">教务员</a>
+							</li>
+
+							<li>
+								<a href="#">论文推荐</a>
+							</li>
+							<li class="active">推荐规则</li>
+						</ul><!-- /.breadcrumb -->
+
+						<!-- #section:basics/content.searchbox -->
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+
+						<!-- /section:basics/content.searchbox -->
+					</div>
+
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+						<!-- #section:settings.box -->
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<!-- #section:settings.skins -->
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select>
+										</div>
+										<span>&nbsp; Choose Skin</span>
+									</div>
+
+									<!-- /section:settings.skins -->
+
+									<!-- #section:settings.navbar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+									</div>
+
+									<!-- /section:settings.navbar -->
+
+									<!-- #section:settings.sidebar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+									</div>
+
+									<!-- /section:settings.sidebar -->
+
+									<!-- #section:settings.breadcrumbs -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
+										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+									</div>
+
+									<!-- /section:settings.breadcrumbs -->
+
+									<!-- #section:settings.rtl -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
+										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+									</div>
+
+									<!-- /section:settings.rtl -->
+
+									<!-- #section:settings.container -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
+										<label class="lbl" for="ace-settings-add-container">
+											Inside
+											<b>.container</b>
+										</label>
+									</div>
+
+									<!-- /section:settings.container -->
+								</div><!-- /.pull-left -->
+
+								<div class="pull-left width-50">
+									<!-- #section:basics/sidebar.options -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
+										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
+										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
+										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+									</div>
+
+									<!-- /section:basics/sidebar.options -->
+								</div><!-- /.pull-left -->
+							</div><!-- /.ace-settings-box -->
+						</div><!-- /.ace-settings-container -->
+
+						<!-- /section:settings.box -->
+						<div class="page-header">
+							<h1>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="widget-box">
+									<div class="widget-header widget-header-blue widget-header-flat">
+										<h4 class="widget-title lighter">推荐规则</h4>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main">
+											<!-- #section:plugins/fuelux.wizard -->
+											<div id="fuelux-wizard-container">
+												<div>
+													<!-- #section:plugins/fuelux.wizard.steps -->
+													<ul class="steps">
+														<li data-step="1" class="active">
+															<span class="step">1</span>
+															<span class="title">推荐规则</span>
+														</li>
+														<li data-step="3">
+															<span class="step">2</span>
+															<span class="title">规则确认</span>
+														</li>
+													</ul>
+
+													<!-- /section:plugins/fuelux.wizard.steps -->
+												</div>
+
+												<hr />
+
+												<!-- #section:plugins/fuelux.wizard.container -->
+												<div class="step-content pos-rel">
+													<div class="step-pane active" data-step="1">
+														<h3 class="lighter block green">输入以下信息</h3>
+
+														<form class="form-horizontal" id="sample-form">
+															<!-- #sfection:elements.form.input-state -->
+															<div class="form-group has-warning">
+																<label for="inputWarning" class="col-xs-12 col-sm-3 control-label no-padding-right">Input with warning</label>
+
+																<div class="col-xs-12 col-sm-5">
+																	<span class="block input-icon input-icon-right">
+																		<input type="text" id="inputWarning" class="width-100" />
+																		<i class="ace-icon fa fa-leaf"></i>
+																	</span>
+																</div>
+																<div class="help-block col-xs-12 col-sm-reset inline"> Warning tip help! </div>
+															</div>
+
+															<!-- /section:elements.form.input-state -->
+															<div class="form-group has-error">
+																<label for="inputError" class="col-xs-12 col-sm-3 col-md-3 control-label no-padding-right">Input with error</label>
+
+																<div class="col-xs-12 col-sm-5">
+																	<span class="block input-icon input-icon-right">
+																		<input type="text" id="inputError" class="width-100" />
+																		<i class="ace-icon fa fa-times-circle"></i>
+																	</span>
+																</div>
+																<div class="help-block col-xs-12 col-sm-reset inline"> Error tip help! </div>
+															</div>
+
+															<div class="form-group has-success">
+																<label for="inputSuccess" class="col-xs-12 col-sm-3 control-label no-padding-right">Input with success</label>
+
+																<div class="col-xs-12 col-sm-5">
+																	<span class="block input-icon input-icon-right">
+																		<input type="text" id="inputSuccess" class="width-100" />
+																		<i class="ace-icon fa fa-check-circle"></i>
+																	</span>
+																</div>
+																<div class="help-block col-xs-12 col-sm-reset inline"> Success tip help! </div>
+															</div>
+
+															<div class="form-group has-info">
+																<label for="inputInfo" class="col-xs-12 col-sm-3 control-label no-padding-right">Input with info</label>
+
+																<div class="col-xs-12 col-sm-5">
+																	<span class="block input-icon input-icon-right">
+																		<input type="text" id="inputInfo" class="width-100" />
+																		<i class="ace-icon fa fa-info-circle"></i>
+																	</span>
+																</div>
+																<div class="help-block col-xs-12 col-sm-reset inline"> Info tip help! </div>
+															</div>
+
+															<div class="form-group">
+																<label for="inputError2" class="col-xs-12 col-sm-3 control-label no-padding-right">Input with error</label>
+
+																<div class="col-xs-12 col-sm-5">
+																	<span class="input-icon block">
+																		<input type="text" id="inputError2" class="width-100" />
+																		<i class="ace-icon fa fa-times-circle red"></i>
+																	</span>
+																</div>
+																<div class="help-block col-xs-12 col-sm-reset inline"> Error tip help! </div>
+															</div>
+														</form>
+
+														<form class="form-horizontal hide" id="validation-form" method="post" action="http://172.18.219.176:8000/recomm/assistant/submitrule/3/" enctype="multipart/form-data">
+															{% csrf_token %}
+															<div class="space-2"></div>
+
+
+															<div class="hr hr-dotted"></div>
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">评审项目</label>
+
+																<div class="col-xs-12 col-sm-9">
+																	<select id="state" name="state" class="select2" data-placeholder="点击选择...">
+																		<option value="">&nbsp;</option>
+																		<option value="Bachelor">本科毕业论文</option>
+																		<option value="Master">硕士毕业论文</option>
+																	</select>
+																</div>
+
+															</div>
+
+															<div class="space-2"></div>
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">老师最多评审的论文数</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:plugins/fuelux.spinner -->
+																	<input type="text" id="spinner1" name="spinner1"/>
+																	<!-- /section:plugins/fuelux.spinner -->
+																</div>
+															</div>
+
+															<div class="space-2"></div>
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">学生论文送审几位老师</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:plugins/fuelux.spinner -->
+																	<input type="text" id="spinner2" name="spinner2" />
+																	<!-- /section:plugins/fuelux.spinner -->
+																</div>
+															</div>
+
+															<div class="space-2"></div>
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">学生名单</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:custom/file-input -->
+																	<input type="file" id="inputfile0" name="inputfile0"/>
+																	<!-- /section:custom/file-input -->
+																</div>
+															</div>
+
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">学生导师信息</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:custom/file-input -->
+																	<input type="file" id="inputfile2" name="inputfile2"/>
+																	<!-- /section:custom/file-input -->
+																</div>
+															</div>
+
+															<div class="space-2"></div>
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">学生论文列表</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:custom/file-input -->
+																	<input type="file" id="inputfile3" name="inputfile3"/>
+																	<!-- /section:custom/file-input -->
+																</div>
+															</div>
+
+															<div class="form-group">
+																<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="state">学生论文压缩包</label>
+																<div class="col-xs-12 col-sm-9">
+																	<!-- #section:custom/file-input -->
+																	<input type="file" id="inputfile4" name="inputfile4"/>
+																	<!-- /section:custom/file-input -->
+																</div>
+															</div>
+															<a href="/recomm/assistant/fileformatrule" style="position:relative;left:300px;">点击下载文件格式说明</a>
+														</form>
+
+													</div>
+
+													<div class="step-pane" data-step="3">
+														<div class="center">
+															<h3 class="blue lighter">请确认已经上传的文件</h3>
+															<span>老师最多评审的论文数：</span>
+															<div id="teacherreview"></div>
+															<span>学生论文送审几位老师：</span>
+															<div id="studentsendnum"></div>
+															<span>学生名单：</span>
+															<div id="studentlist"></div>
+															<span>老师名单：</span>
+															<div id="teacherlist"></div>
+															<span>学生导师信息：</span>
+															<div id="info"></div>
+															<span>学生论文：</span>
+															<div id="studentessay"></div>
+
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="4">
+														<div class="center">
+															<h3 class="green">Congrats!</h3>
+															The recommendation program is ready to run! Click finish to continue!
+														</div>
+
+                                                        <div id="progressbar"></div>
+													</div>
+												</div>
+
+												<!-- /section:plugins/fuelux.wizard.container -->
+											</div>
+
+											<hr />
+											<div class="wizard-actions">
+												<!-- #section:plugins/fuelux.wizard.buttons -->
+												<button class="btn btn-prev">
+													<i class="ace-icon fa fa-arrow-left"></i>
+													Prev
+												</button>
+
+												<button class="btn btn-success btn-next" data-last="Finish" id="next">
+													Next
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+
+												<!-- /section:plugins/fuelux.wizard.buttons -->
+											</div>
+
+											<!-- /section:plugins/fuelux.wizard -->
+										</div><!-- /.widget-main -->
+									</div><!-- /.widget-body -->
+								</div>
+
+								<div id="modal-wizard" class="modal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div id="modal-wizard-container">
+												<div class="modal-header">
+													<ul class="steps">
+														<li data-step="1" class="active">
+															<span class="step">1</span>
+															<span class="title">Validation states</span>
+														</li>
+
+														<li data-step="2">
+															<span class="step">2</span>
+															<span class="title">Alerts</span>
+														</li>
+
+														<li data-step="3">
+															<span class="step">3</span>
+															<span class="title">Payment Info</span>
+														</li>
+
+														<li data-step="4">
+															<span class="step">4</span>
+															<span class="title">Other Info</span>
+														</li>
+													</ul>
+												</div>
+
+												<div class="modal-body step-content">
+													<div class="step-pane active" data-step="1">
+														<div class="center">
+															<h4 class="blue">Step 1</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="2">
+														<div class="center">
+															<h4 class="blue">Step 2</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="3">
+														<div class="center">
+															<h4 class="blue">Step 3</h4>
+														</div>
+													</div>
+
+													<div class="step-pane" data-step="4">
+														<div class="center">
+															<h4 class="blue">Step 2</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="modal-footer wizard-actions">
+												<button class="btn btn-sm btn-prev">
+													<i class="ace-icon fa fa-arrow-left"></i>
+													Prev
+												</button>
+
+												<button class="btn btn-success btn-sm btn-next" data-last="Finish">
+													Next
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+
+												<button class="btn btn-danger btn-sm pull-left" data-dismiss="modal">
+													<i class="ace-icon fa fa-times"></i>
+													Cancel
+												</button>
+											</div>
+										</div>
+									</div>
+								</div><!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application &copy; 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="{% static 'ace/components/jquery/dist/jquery.js' %}"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="../components/jquery.1x/dist/jquery.js"></script>
+<![endif]-->
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  		<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='../components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="{% static 'ace/components/bootstrap/dist/js/bootstrap.js' %}"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="{% static 'ace/components/fuelux/js/wizard.js' %}"></script>
+		<script src="{% static 'ace/components/jquery-validation/dist/jquery.validate.js' %}"></script>
+		<script src="{% static 'ace/components/jquery-validation/dist/additional-methods.js' %}"></script>
+		<script src="{% static 'ace/components/bootbox.js/bootbox.js' %}"></script>
+		<script src="{% static 'ace/components/jquery.maskedinput/dist/jquery.maskedinput.js' %}"></script>
+		<script src="{% static 'ace/components/select2/dist/js/select2.js' %}"></script>
+
+
+		<script src="{% static 'ace/components/_mod/jquery-ui.custom/jquery-ui.custom.js' %}"></script>
+		<script src="{% static 'ace/components/jqueryui-touch-punch/jquery.ui.touch-punch.js' %}"></script>
+		<script src="{% static 'ace/components/chosen/chosen.jquery.js' %}"></script>
+		<script src="{% static 'ace/components/fuelux/js/spinbox.js' %}"></script>
+		<script src="{% static 'ace/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'ace/components/bootstrap-timepicker/js/bootstrap-timepicker.js' %}"></script>
+		<script src="{% static 'ace/components/moment/moment.js' %}"></script>
+		<script src="{% static 'ace/components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+		<script src="{% static 'ace/components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js' %}"></script>
+		<script src="{% static 'ace/components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js' %}"></script>
+		<script src="{% static 'ace/components/jquery-knob/js/jquery.knob.js' %}"></script>
+		<script src="{% static 'ace/components/autosize/dist/autosize.js' %}"></script>
+		<script src="{% static 'ace/components/jquery-inputlimiter/jquery.inputlimiter.js' %}"></script>
+		<script src="{% static 'ace/components/jquery.maskedinput/dist/jquery.maskedinput.js' %}"></script>
+		<script src="{% static 'ace/components/_mod/bootstrap-tag/bootstrap-tag.js' %}"></script>
+
+
+		<!-- ace scripts -->
+		<script src="{% static 'ace/assets/js/src/elements.scroller.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.colorpicker.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.fileinput.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.typeahead.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.wysiwyg.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.spinner.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.treeview.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.wizard.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/elements.aside.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.basics.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.scrolltop.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.ajax-content.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.touch-drag.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.sidebar.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.sidebar-scroll-1.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.submenu-hover.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.widget-box.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.settings.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.settings-rtl.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.settings-skin.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.widget-on-reload.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.searchbox-autocomplete.js' %}"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+
+			jQuery(function($) {
+				var userid = {{userid}};
+				// The spinner
+				$('#spinner1').ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+				.closest('.ace-spinner')
+				.on('changed.fu.spinbox', function(){
+					//console.log($('#spinner1').val())
+				});
+				//$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
+				//or
+				//$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
+				//$('#spinner1').closest('.ace-spinner').spinner('value', 0);//reset to 0
+
+				$('#spinner2').ace_spinner({value:0,min:0,max:200,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+				.closest('.ace-spinner')
+				.on('changed.fu.spinbox', function(){
+					//console.log($('#spinner2').val())
+				});
+
+				// File input0
+				$('#inputfile0').ace_file_input({
+					no_file:'请上传csv文件',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false, //| true | large,
+					whitelist:'csv',
+					//blacklist:'jpg',
+
+					allowExt: ["csv"], // can only upload csv file
+					allowMime:["application/vnd.ms-excel"],
+					//denyExt: ["jpg"],
+					//allowMime: ["application/pdf","application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
+					//denyMime: ["image/jpg"],
+
+					//onchange:''
+					//
+				}).on('file.error.ace', function(event, info) {
+         			//nsDialog.jAlert("请上传excel格式文件","提示");
+         			console.log(info);
+         			console.log('Please upload csv file');
+      			});
+
+				// File input1
+				$('#inputfile1').ace_file_input({
+					no_file:'请上传csv文件',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false, //| true | large,
+					whitelist:'csv',
+					//blacklist:'jpg',
+
+					allowExt: ["csv"], // can only upload csv file
+					allowMime:["application/vnd.ms-excel"],
+					//denyExt: ["jpg"],
+					//allowMime: ["application/pdf","application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
+					//denyMime: ["image/jpg"],
+
+					//onchange:''
+					//
+				}).on('file.error.ace', function(event, info) {
+         			//nsDialog.jAlert("请上传excel格式文件","提示");
+         			console.log(info);
+         			console.log('Please upload csv file');
+      			});
+
+				// File input2
+				$('#inputfile2').ace_file_input({
+					no_file:'请上传csv文件',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false, //| true | large,
+					whitelist:'csv',
+					//blacklist:'jpg',
+
+					allowExt: ["csv"], // can only upload csv file
+					allowMime:["application/vnd.ms-excel"],
+					//denyExt: ["jpg"],
+					//allowMime: ["application/pdf","application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"],
+					//denyMime: ["image/jpg"],
+
+					//onchange:''
+					//
+				}).on('file.error.ace', function(event, info) {
+         			//nsDialog.jAlert("请上传excel格式文件","提示");
+         			console.log(info);
+         			console.log('Please upload csv file');
+      			});
+
+				$('#next').click(function(){
+					$('#teacherreview').text($('#spinner1').val());
+					$('#studentsendnum').text($('#spinner2').val());
+					$('#studentlist').text($('#inputfile0').val());
+					$('#teacherlist').text($('#inputfile1').val());
+					$('#info').text($('#inputfile2').val());
+					$('#studentessay').text($('#inputfile3').val());
+
+				})
+
+				//progressbar
+				$("#progressbar").progressbar({
+					value: 0,
+					create: function( event, ui ) {
+						$(this).addClass('progress progress-striped active')
+							   .children(0).addClass('progress-bar progress-bar-success');
+					}
+				});
+
+
+				// File input3
+				$('#inputfile3').ace_file_input({
+					no_file:'请上传csv文件',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false, //| true | large,
+					whitelist:'csv',
+					//blacklist:'jpg',
+
+					allowExt: ["csv"],
+					//denyExt: ["jpg"],
+					allowMime: [ "application/vnd.ms-excel"],
+					//denyMime: ["image/jpg"],
+
+					//onchange:''
+					//
+				}).on('file.error.ace', function(event, info) {
+         			console.log('Not valid file type');
+      			});
+
+      			// File input4
+				$('#inputfile4').ace_file_input({
+					no_file:'请上传zip文件',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false, //| true | large,
+					whitelist:'zip',
+					blacklist:'jpg',
+
+					allowExt: ["rar", "zip"],
+					//denyExt: ["jpg"],
+					//allowMime: ["application/octet-stream","application/zip"],
+					//denyMime: ["image/jpg"],
+
+					//onchange:''
+					//
+				}).on('file.error.ace', function(event, info) {
+         			console.log('Not valid file type');
+      			});
+
+
+
+				//pre-show a file name, for example a previously selected file
+				//$('#id-input-file-3').ace_file_input('show_file_list', ['studentessay.zip'])
+
+				$('[data-rel=tooltip]').tooltip();
+
+				$('.select2').css('width','200px').select2({allowClear:true})
+				.on('change', function(){
+					$(this).closest('form').validate().element($(this));
+				});
+
+
+				// sleep function
+				function sleep(numberMillis) {
+					console.log('sleep');
+    				var now = new Date();
+    				var exitTime = now.getTime() + numberMillis;
+    				while (true) {
+        				now = new Date();
+        				if (now.getTime() > exitTime)
+        					return;
+        			}
+				}
+
+				var $validation = false;
+				$('#fuelux-wizard-container')
+				.ace_wizard({
+					//step: 2 //optional argument. wizard will jump to step "2" at first
+					//buttons: '.wizard-actions:eq(0)'
+				})
+				.on('actionclicked.fu.wizard' , function(e, info){
+					if(info.step == 1 && $validation) {
+						if(!$('#validation-form').valid()) e.preventDefault();
+					}
+				})
+				//.on('changed.fu.wizard', function() {
+				//})
+				.on('finished.fu.wizard', function(e) {
+					document.getElementById("validation-form").submit();
+					console.log('submit');
+
+
+					//////////////////////////////////////////////
+
+
+				}).on('stepclick.fu.wizard', function(e){
+					//e.preventDefault();//this will prevent clicking and selecting steps
+				});
+
+
+				//jump to a step
+				/**
+				var wizard = $('#fuelux-wizard-container').data('fu.wizard')
+				wizard.currentStep = 3;
+				wizard.setState();
+				*/
+
+				//determine selected step
+				//wizard.selectedItem().step
+
+
+				$('#sample-form').hide();
+				$('#validation-form').removeClass('hide');
+				/*
+				//hide or show the other form which requires validation
+				//this is for demo only, you usullay want just one form in your application
+				$('#skip-validation').removeAttr('checked').on('click', function(){
+					$validation = this.checked;
+					if(this.checked) {
+						$('#sample-form').hide();
+						$('#validation-form').removeClass('hide');
+					}
+					else {
+						//$('#validation-form').addClass('hide');
+						$('#sample-form').hide();
+					}
+				})
+				*/
+
+
+
+				//documentation : http://docs.jquery.com/Plugins/Validation/validate
+
+				jQuery.validator.addMethod("csv", function (value, element) {
+					var i = value.indexOf('.csv');
+					if(i!=-1)
+						return true;
+					else
+						return false;
+				}, "Please choose a csv file.");
+
+				jQuery.validator.addMethod("zip", function (value, element) {
+					var j = value.indexOf('.zip');
+					var k = value.indexOf('.rar');
+					if((j!=-1)|(k!=-1))
+						return true;
+					else
+						return false;
+				}, "Please choose a zip,rar type file.");
+
+				$('#validation-form').validate({
+					errorElement: 'div',
+					errorClass: 'help-block',
+					focusInvalid: false,
+					ignore: "",
+					rules: {
+						state: {
+							required: true,
+						},
+						inputfile0: {
+							required: true,
+							csv: true,
+						},
+						inputfile1: {
+							required: true,
+							csv: true,
+						},
+						inputfile2: {
+							required: true,
+							csv: true,
+						},
+						inputfile3: {
+							required: true,
+							csv: true,
+						},
+						inputfile4: {
+							required: true,
+							zip: true,
+						},
+					},
+
+					messages: {
+						state: {
+							required: "Please choose a project",
+						},
+						inputfile0: {
+							required: "Please choose a file",
+							csv: "Please choose a csv file",
+						},
+						inputfile1: {
+							required: "Please choose a file",
+							csv: "Please choose a csv file",
+						},
+						inputfile2: {
+							required: "Please choose a file",
+							csv: "Please choose a csv file",
+						},
+						inputfile3: {
+							required: "Please choose a file",
+							csv: "Please choose a csv file",
+						},
+						inputfile4: {
+							required: "Please choose a file",
+							zip: "Please choose a zip, rar type file",
+						},
+					},
+
+
+					highlight: function (e) {
+						$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+					},
+
+					success: function (e) {
+						$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+						$(e).remove();
+					},
+
+					errorPlacement: function (error, element) {
+						if(element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+							var controls = element.closest('div[class*="col-"]');
+							if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+							else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+						}
+						else if(element.is('.select2')) {
+							error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+						}
+						else if(element.is('.chosen-select')) {
+							error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+						}
+						else error.insertAfter(element.parent());
+					},
+
+					submitHandler: function (form) {
+					},
+					invalidHandler: function (form) {
+					}
+				});
+
+
+
+
+				$('#modal-wizard-container').ace_wizard();
+				$('#modal-wizard .wizard-actions .btn[data-dismiss=modal]').removeAttr('disabled');
+
+
+				/**
+				$('#date').datepicker({autoclose:true}).on('changeDate', function(ev) {
+					$(this).closest('form').validate().element($(this));
+				});
+
+				$('#mychosen').chosen().on('change', function(ev) {
+					$(this).closest('form').validate().element($(this));
+				});
+				*/
+
+
+				$(document).one('ajaxloadstart.page', function(e) {
+					//in ajax mode, remove remaining elements before leaving page
+					$('[class*=select2]').remove();
+				});
+
+
+
+				$('#test_submit').click(function(){
+
+					/////////////////////测试文件上传
+					var form = document.getElementById('validation-form');
+					var formData = new FormData();
+                	//formData.append("file", document.getElementById('inputfile2'));
+                	//formData.append("token", token_value); // 其他参数按这样子加入
+
+                	var xhr = new XMLHttpRequest();
+                	xhr.open('POST', "http://172.18.219.176:8000/recomm/assistant/submitrule/0/");
+                	// 上传完成后的回调函数
+                	xhr.onload = function () {
+                    	if (xhr.status === 200) {
+　　                      	console.log('上传成功');
+                    	} else {
+  　                     	console.log('上传出错');
+                   	 	}
+                	};
+                	// 获取上传进度
+                	xhr.upload.onprogress = function (event) {
+                    	if (event.lengthComputable) {
+                        	var percent = Math.floor(event.loaded / event.total * 100) ;
+                        	// 设置进度显示
+                        	console.log(percent);
+                    	}
+                	};
+               		xhr.send(formData);
+				})
+
+			})
+		</script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="{% static 'ace/assets/css/ace.onpage-help.css' %}" />
+		<link rel="stylesheet" href="{% static 'ace/docs/assets/js/themes/sunburst.css' %}" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="{% static 'ace/assets/js/src/elements.onpage-help.js' %}"></script>
+		<script src="{% static 'ace/assets/js/src/ace.onpage-help.js' %}"></script>
+		<script src="{% static 'ace/docs/assets/js/rainbow.js' %}"></script>
+		<script src="{% static 'ace/docs/assets/js/language/generic.js' %}"></script>
+		<script src="{% static 'ace/docs/assets/js/language/html.js' %}"></script>
+		<script src="{% static 'ace/docs/assets/js/language/css.js' %}"></script>
+		<script src="{% static 'ace/docs/assets/js/language/javascript.js' %}"></script>
+	</body>
+</html>

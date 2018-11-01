@@ -1,0 +1,50 @@
+**教务员页面
+- 登陆页面
+
+- 主页
+
+- 导师和学生用户管理
+
+- 查看学生的论文提交情况 OK
+polls/assistant/studentessay/id=
+
+- 上传老师文章
+
+
+- 查看老师文章列表 OK
+polls/assistant/teacheressay/id=
+
+- 查看匹配情况 OK
+polls/assistant/matchresult/id=
+
+- 设置自动匹配的规则，并自动匹配
+- 调整匹配结果
+
+**导师页面
+- 主页
+
+
+- 登陆页面
+
+- 提交代表性论文  OK
+polls/teacher/handin/id=1
+
+- 删除论文 OK
+delete the file------
+
+- 查看匹配结果并下载学生文章 OK
+polls/teacher/matchresult/id=1
+
+**学生页面
+- 登陆页面
+
+- 主页
+
+- 提交论文 OK
+polls/student/handin/id=1
+
+- 删除论文 OK
+delete the file------
+
+- 查看匹配结果 OK
+polls/student/matchresult/id=1

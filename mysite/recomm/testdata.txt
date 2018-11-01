@@ -1,0 +1,16 @@
+teacher1
+    sdn cloud
+teacher2
+    fenbushi
+teacher3
+    jiance
+student1
+    nn
+student2
+    datamining
+student3
+    network
+
+conf.json
+  "teacher_reviewnum": 2,
+  "student_sendnum": 2

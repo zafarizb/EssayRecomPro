@@ -1,0 +1,4 @@
+1、数据库更改：删除db.sqlite3后重新使用python manage.py makemigrations appname, python manage.py migrate
+2、zipfile解压缩文件名乱码问题
+https://www.jb51.net/article/136879.htm
+修改zipfile.py
