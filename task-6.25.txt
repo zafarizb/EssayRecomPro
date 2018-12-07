@@ -1,3 +1,0 @@
-6.25
-1. outout the task to excel file
-2. dont send essays from the same lab to the same teacher 
